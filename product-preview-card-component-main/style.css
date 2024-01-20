@@ -1,0 +1,127 @@
+:root {
+  --clr-primary-hsl-400: hsl(158, 36%, 37%);
+  --clr-primary-hsl-450: hsl(158, 36%, 18%);
+  --clr-primary-hsl-500: hsl(30, 38%, 92%);
+
+  --clr-secondary-200: hsl(30, 38%, 92%);
+
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(228, 12%, 48%);
+  --clr-neutral-hsl-100: hsl(0, 0%, 100%);
+
+  --ff-accent: "Fraunces", serif;
+  --ff-base: "Montserrat", sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+  background-color: hsl(var(--clr-primary-hsl-500));
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  line-height: 2rem;
+}
+
+body {
+  background-color: var(--clr-secondary-200);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: 0.825erm;
+  color: var(--clr-neutral-400);
+  display: grid;
+  place-content: center;
+  min-height: 95vh;
+  margin: 1rem;
+}
+
+.product {
+  --product-margin: 1.5rem;
+  --product-gap: 1rem;
+  display: grid;
+  background-color: var(--clr-neutral-hsl-100);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.product__info {
+  margin: var(--product-margin);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--product-gap);
+}
+
+.product__catagory {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.product__title {
+  font-family: var(--ff-accent);
+  font-weight: var(--fw-bold);
+  font-size: 2rem;
+  color: var(--clr-neutral-900);
+}
+
+.product__description {
+  line-height: 1.75rem;
+}
+
+.product__price {
+  display: flex;
+  gap: var(--product-gap);
+  align-items: center;
+}
+
+.product__price-current {
+  font-size: 2rem;
+  color: var(--clr-primary-hsl-400);
+  font-weight: var(--fw-bold);
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--clr-primary-hsl-400);
+  border-style: none;
+  border-radius: 0.5rem;
+  color: var(--clr-neutral-hsl-100);
+  padding: 1rem 1.5rem;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button::before {
+  content: "";
+  background-image: url("images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--clr-primary-hsl-450);
+}
